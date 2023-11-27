@@ -8,7 +8,7 @@ const Branding = () => {
     <Link href="/">
       <div className={styles.brand}>
         <Image className={styles.logo} src="/assets/logo/logo-200.png" alt="Interactive Nerd Logo" width={200} height={117} />
-        <div className={styles.brand_title}>Interactive Nerd</div>
+        <div className={styles.site_name}>Interactive Nerd</div>
       </div>
     </Link>
   );

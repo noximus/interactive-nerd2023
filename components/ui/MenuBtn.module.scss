@@ -1,4 +1,5 @@
 .menu {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,4 +38,7 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+.active {
+  color: #F57500;
 }

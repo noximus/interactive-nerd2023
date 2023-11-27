@@ -1,5 +1,5 @@
 import Header from './header';
-import styles from './layout.module.scss';
+import styles from './layout.scss';
 
 const Layout = () => {
   return (
