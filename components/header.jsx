@@ -1,14 +1,15 @@
+import Branding from './ui/Branding';
+import MenuBtn from './ui/MenuBtn';
+import ShareBtn from './ui/ShareBtn';
+
 import styles from './header.module.scss';
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.brand}>
-        <div>Logo</div>
-        <div>Interactiver Nerd</div>
-      </div>
-      <div className={styles.menu}>Menu</div>
-      <div className={styles.share}>Share</div>
+      <Branding />
+      <MenuBtn />
+      <ShareBtn />
     </header>
   );
 };

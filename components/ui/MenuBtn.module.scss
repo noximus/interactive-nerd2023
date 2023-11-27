@@ -1,0 +1,40 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+}
+.nav_btn {
+  width: 33px;
+  display: flex;
+  flex-direction: column;
+}
+.ncs, .nos, .nbs {
+  display: block;
+  margin-bottom: 6px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+}
+.ncs {
+  width: 60%;
+  display: flex;
+  margin-left: auto;
+}
+.nbs {
+  width: 60%;
+  display: flex;
+  margin-right: auto;
+}
+.menu_button_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.41);
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
