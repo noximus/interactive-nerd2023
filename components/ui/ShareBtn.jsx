@@ -1,31 +1,31 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { gsap } from 'gsap';
 import styles from './ShareBtn.module.scss';
-// import styles2 from './ShareCluster.module.scss';
-import ShareCluster from './ShareCluster';
+import ShareModal from './ShareModal';
 
 
 
 const ShareBtn = () => {
-	const shareCluster = useRef();
-	const shareCurrent = shareCluster.current
+	const shareModal = useRef();
+	const shareCurrent = shareModal.current
 	const [shareClicked, setShareClicked] = useState(false)
+	const [modalShowing, setModalShowing] = useState(false)
 
 	const handleClick = () => {
 		setShareClicked(!shareClicked)
 	}
-
+	
 	useEffect(() => {
 		if(shareClicked){
-			gsap.to(shareCurrent, {width:"200px", duration:.5})
+			gsap.to(shareCurrent, {width:"225px", duration:.5, onComplete:function(){setModalShowing(true)}})
 		}else{
-			gsap.to(shareCurrent, {width:"0px", duration:.5})
+			gsap.to(shareCurrent, {width:"0px", duration:.5, delay:1, onComplete:setModalShowing(false)})
 		}
 	}, [shareClicked])
 
 	return (
 		<div className={styles.share} onClick={handleClick}>Share
-			<ShareCluster ref={shareCluster}/>
+			<ShareModal ref={shareModal} animate={modalShowing}/>
 		</div>
 	)
 };
