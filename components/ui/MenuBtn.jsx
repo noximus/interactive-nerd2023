@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import styles from './MenuBtn.module.scss';
 
@@ -20,7 +20,7 @@ const MenuBtn = () => {
     setMenuActive(!menuActive);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const durationVal = 0.5;
     if (isHovered) {
       gsap.to(menuBtn.current, { duration: durationVal, color: '#F57500' });
