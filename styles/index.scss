@@ -2,6 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+$background-color: #313131;
+$primary-color: #F57500;
+$secondary-color: #313131;
+$tertiary-color: #fff;
+
 body {
-  background: #313131;
+  background-color: $background-color;
 }
