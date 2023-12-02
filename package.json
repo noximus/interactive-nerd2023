@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
+    "sass": "^1.69.5",
     "typeface-mukta-vaani": "^1.1.13"
   },
   "devDependencies": {
