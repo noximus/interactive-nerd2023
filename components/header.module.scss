@@ -3,7 +3,7 @@
   color: white;
   display: grid;
   width: 100%;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 1fr 80px 80px;
   grid-template-rows: 80px;
   grid-template-areas: 'brand menu share';
 }
