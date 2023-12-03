@@ -1,10 +1,11 @@
 .shareModal {
 	height: 160px;
-	width: 0px;
-	background: rgba(255, 255, 255, 0.05);
+	width: 240px;
+	background: #222222;
 	position: absolute;
 	top: 80px;
-	right: 0px;
+	right: -240px;
+	z-index: 100;
 }
 .socialBtns{
 	width: 80px;

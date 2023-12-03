@@ -8,6 +8,7 @@ const ShareBtn = () => {
   const shareBtn = useRef();
   const shareBtnOverlay = useRef();
   const shareModal = useRef();
+	const tween = useRef(null);
   const shareBtnCurrent = shareBtn.current;
   const shareBtnOverlayCurrent = shareBtnOverlay.current;
   const shareModalCurrent = shareModal.current;
@@ -36,20 +37,30 @@ const ShareBtn = () => {
   }, [shareBtnHover]);
   useEffect(() => {
     if (shareClicked) {
-      gsap.to(shareModalCurrent, {
-        width: '240px',
+      tween.current = gsap.to(shareModalCurrent, {
+        right: '0',
+        ease: 'inOut',
         duration: 0.5,
         onComplete: () => setModalShowing(true),
       });
+      gsap.to(shareBtnOverlayCurrent, { backgroundColor: '#9a4c03', duration: 0 });
     } else {
-      setModalShowing(false);
-      gsap.to(shareModalCurrent, { width: '0px', duration: 0.5, delay: 1 });
+      if (tween.current) {
+        console.log('killing tween');
+        tween.current.kill();
+        setModalShowing(false);
+        tween.current = gsap.to(shareModalCurrent, { right: '-240px', ease: 'inOut', duration: 0.5 });
+        gsap.to(shareBtnOverlayCurrent, { backgroundColor: '#F57500', duration: 0 });
+      } else {
+        tween.current = gsap.to(shareModalCurrent, { right: '-240px', ease: 'inOut', duration: 0.5, delay: 1, onComplete: () => setModalShowing(false) });
+        gsap.to(shareBtnOverlayCurrent, { backgroundColor: '#F57500', duration: 0 });
+      }
     }
   }, [shareClicked]);
 
   return (
-    <div className={styles.share} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <span ref={shareBtn} className={styles.shareText}>
+    <div className={styles.share}>
+      <span ref={shareBtn} className={styles.shareText} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         Share
       </span>
       <div ref={shareBtnOverlay} className={styles.shareBtnOverlay}></div>
