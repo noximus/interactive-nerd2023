@@ -28,10 +28,10 @@ const ShareBtn = () => {
   useEffect(() => {
     if (shareBtnHover) {
       gsap.to(shareBtnCurrent, { color: '#F57500', duration: 0.2 });
-      gsap.to(shareBtnOverlayCurrent, { top: '-80px', duration: 0.4 });
+      gsap.to(shareBtnOverlayCurrent, { top: '-80px', ease: 'inOut', duration: 0.2 });
     } else {
       gsap.to(shareBtnCurrent, { color: '#FFFFFF', duration: 0.2 });
-      gsap.to(shareBtnOverlayCurrent, { top: '0', duration: 0.4 });
+      gsap.to(shareBtnOverlayCurrent, { top: '0', ease: 'inOut', duration: 0.2 });
     }
   }, [shareBtnHover]);
   useEffect(() => {
