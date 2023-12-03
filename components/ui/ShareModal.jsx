@@ -15,10 +15,11 @@ const ShareModal = forwardRef((props, ref) => {
   const getAllIcons = () => [socialIcon1.current, socialIcon2.current, socialIcon3.current, socialIcon4.current, socialIcon5.current, returnIcon.current];
 
   const handleMouseEnter = (icon) => () => {
-    gsap.to(icon, { duration: 0.2, backgroundColor: '#F57500' });
+    gsap.to(icon.current, { duration: 0.2, backgroundColor: '#313131' });
+    console.log(icon);
   };
   const handleMouseLeave = (icon) => () => {
-    gsap.to(icon, { duration: 0.2, backgroundColor: '#FFFFFF' });
+    gsap.to(icon.current, { duration: 0.2, backgroundColor: '#F57500' });
   };
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const ShareModal = forwardRef((props, ref) => {
         <FontAwesomeIcon icon={faDiscord} className={styles.socialIcons} />
       </button>
 
-      <button ref={returnIcon} className={styles.returnBtn} onMouseEnter={handleMouseEnter(returnIcon)} onMouseLeave={handleMouseLeave(returnIcon)}>
+      <button ref={returnIcon} className={styles.returnBtn}>
         <FontAwesomeIcon icon={faArrowLeftLong} className={styles.returnIcon} />
       </button>
     </div>
