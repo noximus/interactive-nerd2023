@@ -3,19 +3,25 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: #222222;
+  cursor: pointer;
+  overflow: hidden;
+}
+.shareText {
   font-size: 9px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: #F57500;
-  cursor: pointer;
+  color: white;
+  margin-bottom: 5px;
+  z-index: 2;
 }
 .shareBtnOverlay {
-  height: 100%;
-  width: 100%;
-  background: #222222;
+  height: 80px;
+  width: 80px;
+  background: #F57500;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1;
 }

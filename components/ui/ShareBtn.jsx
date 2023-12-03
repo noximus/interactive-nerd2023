@@ -1,51 +1,58 @@
-import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import styles from './ShareBtn.module.scss';
 import ShareModal from './ShareModal';
-
-
+import { set } from 'date-fns';
 
 const ShareBtn = () => {
-	const shareBtn = useRef();
+  const shareBtn = useRef();
+  const shareBtnOverlay = useRef();
   const shareModal = useRef();
   const shareBtnCurrent = shareBtn.current;
+  const shareBtnOverlayCurrent = shareBtnOverlay.current;
   const shareModalCurrent = shareModal.current;
   const [shareClicked, setShareClicked] = useState(false);
+  const [shareBtnHover, setShareBtnHover] = useState(false);
   const [modalShowing, setModalShowing] = useState(false);
 
   const handleClick = () => {
     setShareClicked(!shareClicked);
   };
   const handleMouseEnter = () => {
-    gsap.to(shareBtnCurrent, { color: '#F57500', duration: 0.2 });
+    setShareBtnHover(true);
   };
   const handleMouseLeave = () => {
-    gsap.to(shareBtnCurrent, { color: '#FFFFFF', duration: 0.2 });
+    setShareBtnHover(false);
   };
 
   useEffect(() => {
+    if (shareBtnHover) {
+      gsap.to(shareBtnCurrent, { color: '#F57500', duration: 0.2 });
+      gsap.to(shareBtnOverlayCurrent, { top: '-80px', duration: 0.4 });
+    } else {
+      gsap.to(shareBtnCurrent, { color: '#FFFFFF', duration: 0.2 });
+      gsap.to(shareBtnOverlayCurrent, { top: '0', duration: 0.4 });
+    }
+  }, [shareBtnHover]);
+  useEffect(() => {
     if (shareClicked) {
-      gsap.to(shareBtnCurrent, {
-        backgroundColor: '#222222',
-        duration: 0.5,
-      });
       gsap.to(shareModalCurrent, {
-        width: '225px',
+        width: '240px',
         duration: 0.5,
-        onComplete: function () {
-          setModalShowing(true);
-        },
+        onComplete: () => setModalShowing(true),
       });
     } else {
-      gsap.to(shareBtnCurrent, { backgroundColor: '#F57500', duration: 0.5 });
-      gsap.to(shareModalCurrent, { width: '0px', duration: 0.5, delay: 1, onComplete: setModalShowing(false) });
+      setModalShowing(false);
+      gsap.to(shareModalCurrent, { width: '0px', duration: 0.5, delay: 1 });
     }
   }, [shareClicked]);
 
   return (
-    <div ref={shareBtn} className={styles.share} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      Share
-      <div className={styles.shareBtnOverLayer}></div>
+    <div className={styles.share} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <span ref={shareBtn} className={styles.shareText}>
+        Share
+      </span>
+      <div ref={shareBtnOverlay} className={styles.shareBtnOverlay}></div>
       <ShareModal ref={shareModal} animate={modalShowing} />
     </div>
   );
