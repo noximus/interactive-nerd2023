@@ -1,21 +1,22 @@
 .shareModal {
-	height: 150px;
-	width: 0px;
-	background: rgba(255, 255, 255, 0.05);
+	height: 160px;
+	width: 240px;
+	background: #222222;
 	position: absolute;
 	top: 80px;
-	right: 0px;
+	right: -240px;
+	z-index: 100;
 }
 .socialBtns{
-	width: 33.3%;
-	height: 75px;
+	width: 80px;
+	height: 80px;
 	background-color: #F57500;
 	opacity: 0;
 	color:white;
 }
 .returnBtn{
-	width: 33.3%;
-	height: 75px;
+	width: 80px;
+	height: 80px;
 	background-color: #313131;
 	opacity: 0;
 }
