@@ -8,4 +8,14 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   background: #F57500;
+  cursor: pointer;
+}
+.shareBtnOverlay {
+  height: 100%;
+  width: 100%;
+  background: #222222;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
