@@ -7,6 +7,7 @@ export default function Index() {
     <>
       <MenuModal />
       <Header />
+      
       <div>This is where the content will go</div>
     </>
   );
