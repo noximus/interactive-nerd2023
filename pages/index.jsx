@@ -1,5 +1,5 @@
-import Header from '../components/header';
-import MenuModal from '../components/ui/MenuModal';
+import Header from '../components/Header/Header';
+import MenuModal from '../components/ui/MenuModal/MenuModal';
 import styles from './index.module.scss';
 
 export default function Index() {
@@ -7,7 +7,7 @@ export default function Index() {
     <>
       <MenuModal />
       <Header />
-      
+
       <div>This is where the content will go</div>
     </>
   );

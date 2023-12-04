@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect, useContext } from 
 import { useDispatch, useSelector } from 'react-redux';
 import { gsap } from 'gsap';
 import styles from './ShareBtn.module.scss';
-import ShareModal from './ShareModal';
+import ShareModal from '../ShareModal/ShareModal';
 import { set } from 'date-fns';
 
 const ShareBtn = () => {
