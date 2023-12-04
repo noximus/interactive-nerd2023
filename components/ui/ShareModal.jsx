@@ -1,4 +1,4 @@
-import { useEffect, useRef, forwardRef } from 'react';
+import { useLayoutEffect, useRef, forwardRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubAlt, faFacebook, faInstagram, faLinkedinIn, faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -6,6 +6,7 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import styles from './ShareModal.module.scss';
 
 const ShareModal = forwardRef((props, ref) => {
+  const [mouseHover, setMouseHover] = useState(false);
   const socialIcon1 = useRef();
   const socialIcon2 = useRef();
   const socialIcon3 = useRef();
@@ -14,15 +15,17 @@ const ShareModal = forwardRef((props, ref) => {
   const returnIcon = useRef();
   const getAllIcons = () => [socialIcon1.current, socialIcon2.current, socialIcon3.current, socialIcon4.current, socialIcon5.current, returnIcon.current];
 
+  const handleClose = () => {
+    props.animate.setModalShowing(false);
+  };
   const handleMouseEnter = (icon) => () => {
     gsap.to(icon.current, { duration: 0.2, backgroundColor: '#313131' });
-    console.log(icon);
   };
   const handleMouseLeave = (icon) => () => {
     gsap.to(icon.current, { duration: 0.2, backgroundColor: '#F57500' });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const allIcons = getAllIcons();
     if (props.animate) {
       gsap.to(allIcons, { duration: 0.5, stagger: 0.1, ease: 'inOut', opacity: 1 });
@@ -53,7 +56,7 @@ const ShareModal = forwardRef((props, ref) => {
         <FontAwesomeIcon icon={faDiscord} className={styles.socialIcons} />
       </button>
 
-      <button ref={returnIcon} className={styles.returnBtn}>
+      <button ref={returnIcon} className={styles.returnBtn} onClick={handleClose}>
         <FontAwesomeIcon icon={faArrowLeftLong} className={styles.returnIcon} />
       </button>
     </div>
