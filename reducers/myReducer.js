@@ -3,13 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const mySlice = createSlice({
   name: 'myFeature',
-  initialState: { value: 20 },
+  initialState: {
+    menuOpen: false,
+    socialOpen: false,
+  },
   reducers: {
     increment: (state) => {
-      state.value += 1;
+      state.age += 1;
     },
     decrement: (state) => {
-      state.value -= 1;
+      state.age -= 1;
     },
   },
 });
