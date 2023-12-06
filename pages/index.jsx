@@ -19,18 +19,11 @@ export default function Index() {
     if (shareOpen) {
       tween.current = gsap.to(shareModalCurrent, {
         right: '0',
-        ease: 'inOut',
+        ease: 'out',
         duration: 0.5,
       });
     } else {
-      tween.current = gsap.to(shareModalCurrent, { right: '-240px', ease: 'inOut', duration: 0.5 });
-      // if (tween.current) {
-      //   console.log('killing tween');
-      //   tween.current.kill();
-      //   toggleShareOpen(false);
-      // } else {
-      //   tween.current = gsap.to(shareModalCurrent, { right: '-240px', ease: 'inOut', duration: 0.5, delay: 2, onComplete: () => toggleShareOpen(false) });
-      // }
+      tween.current = gsap.to(shareModalCurrent, { right: '-240px', ease: 'in', duration: 0.5 });
     }
   }, [shareOpen]);
 
