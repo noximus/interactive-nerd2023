@@ -4,10 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const mySlice = createSlice({
   name: 'myFeature',
   initialState: {
-    name: 'henry',
-    lastName: 'test',
-    age: 6,
-    isFetching: false,
+    menuOpen: false,
+    socialOpen: false,
   },
   reducers: {
     increment: (state) => {

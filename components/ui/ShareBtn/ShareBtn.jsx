@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect, useLayoutEffect, useContext } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { gsap } from 'gsap';
 import styles from './ShareBtn.module.scss';
 import ShareModal from '../ShareModal/ShareModal';
 import { set } from 'date-fns';
 
 const ShareBtn = () => {
-  const dispatch = useDispatch();
-  const count = useSelector((state) => state.myReducer.value);
+  // const dispatch = useDispatch();
+  // const count = useSelector((state) => state.myReducer.value);
   const shareBtn = useRef();
   const shareBtnOverlay = useRef();
   const shareModal = useRef();
@@ -64,7 +64,7 @@ const ShareBtn = () => {
   return (
     <div className={styles.share}>
       <span ref={shareBtn} className={styles.shareText} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        share {count}
+        share
       </span>
       <div ref={shareBtnOverlay} className={styles.shareBtnOverlay}></div>
       <ShareModal ref={shareModal} animate={modalShowing} />
