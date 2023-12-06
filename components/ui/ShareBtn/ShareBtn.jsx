@@ -64,7 +64,7 @@ const ShareBtn = () => {
   return (
     <div className={styles.share}>
       <span ref={shareBtn} className={styles.shareText} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        share
+        sharE
       </span>
       <div ref={shareBtnOverlay} className={styles.shareBtnOverlay}></div>
       <ShareModal ref={shareModal} animate={modalShowing} />
