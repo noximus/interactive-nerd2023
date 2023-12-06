@@ -1,6 +1,6 @@
-import Branding from './ui/Branding';
-import MenuBtn from './ui/MenuBtn';
-import ShareBtn from './ui/ShareBtn';
+import Branding from '../ui/Branding/Branding';
+import MenuBtn from '../ui/MenuBtn/MenuBtn';
+import ShareBtn from '../ui/ShareBtn/ShareBtn';
 
 import styles from './header.module.scss';
 

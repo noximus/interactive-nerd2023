@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { increment, decrement } from '../../../reducers/myReducer';
 import { gsap } from 'gsap';
 import styles from './MenuBtn.module.scss';
 
 const MenuBtn = () => {
+  // const dispatch = useDispatch();
+  // const { age } = useSelector((state) => state.myReducer);
   const [menuActive, setMenuActive] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const menuBtn = useRef();
@@ -11,6 +15,7 @@ const MenuBtn = () => {
   const nbs = useRef();
 
   const handleMouseEnter = () => {
+    // dispatch(increment());
     setIsHovered(true);
   };
   const handleMouseLeave = () => {
@@ -24,14 +29,50 @@ const MenuBtn = () => {
     const durationVal = 0.5;
     if (isHovered) {
       gsap.to(menuBtn.current, { duration: durationVal, color: '#F57500' });
-      gsap.to(ncs.current, { duration: durationVal, rotation: -45, transformOrigin: 'right top', top: '-3px', left: '-6px' });
-      gsap.to(nos.current, { duration: durationVal, rotation: 45, transformOrigin: 'center center', top: '0', left: '0' });
-      gsap.to(nbs.current, { duration: durationVal, rotation: -45, transformOrigin: 'left bottom', top: '3px', left: '6px' });
+      gsap.to(ncs.current, {
+        duration: durationVal,
+        rotation: -45,
+        transformOrigin: 'right top',
+        top: '-3px',
+        left: '-6px',
+      });
+      gsap.to(nos.current, {
+        duration: durationVal,
+        rotation: 45,
+        transformOrigin: 'center center',
+        top: '0',
+        left: '0',
+      });
+      gsap.to(nbs.current, {
+        duration: durationVal,
+        rotation: -45,
+        transformOrigin: 'left bottom',
+        top: '3px',
+        left: '6px',
+      });
     } else {
       gsap.to(menuBtn.current, { duration: durationVal, color: '#FFF' });
-      gsap.to(ncs.current, { duration: durationVal, rotation: 0, transformOrigin: 'right top', top: '0', left: '0' });
-      gsap.to(nos.current, { duration: durationVal, rotation: 0, transformOrigin: 'center center', top: '0', left: '0' });
-      gsap.to(nbs.current, { duration: durationVal, rotation: 0, transformOrigin: 'left bottom', top: '0', left: '0' });
+      gsap.to(ncs.current, {
+        duration: durationVal,
+        rotation: 0,
+        transformOrigin: 'right top',
+        top: '0',
+        left: '0',
+      });
+      gsap.to(nos.current, {
+        duration: durationVal,
+        rotation: 0,
+        transformOrigin: 'center center',
+        top: '0',
+        left: '0',
+      });
+      gsap.to(nbs.current, {
+        duration: durationVal,
+        rotation: 0,
+        transformOrigin: 'left bottom',
+        top: '0',
+        left: '0',
+      });
     }
   }, [isHovered]);
 
