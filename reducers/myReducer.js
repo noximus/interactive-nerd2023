@@ -5,7 +5,8 @@ const mySlice = createSlice({
   name: 'myFeature',
   initialState: {
     menuOpen: false,
-    socialOpen: false,
+    shareOpen: false,
+    shareAnim: false,
   },
   reducers: {
     increment: (state) => {
@@ -14,9 +15,16 @@ const mySlice = createSlice({
     decrement: (state) => {
       state.age -= 1;
     },
+    toggleMenuOpen: (state) => {
+      state.menuOpen = !state.menuOpen;
+    },
+    toggleShareOpen: (state) => {
+      state.shareOpen = !state.shareOpen;
+      state.shareAnim = !state.shareAnim;
+    },
   },
 });
 
-export const { increment, decrement } = mySlice.actions;
+export const { increment, decrement, toggleMenuOpen, toggleShareOpen } = mySlice.actions;
 
 export default mySlice.reducer;
