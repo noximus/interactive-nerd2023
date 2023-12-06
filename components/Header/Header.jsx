@@ -2,7 +2,7 @@ import Branding from '../ui/Branding/Branding';
 import MenuBtn from '../ui/MenuBtn/MenuBtn';
 import ShareBtn from '../ui/ShareBtn/ShareBtn';
 
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 
 const Header = () => {
   return (
