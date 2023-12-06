@@ -34,7 +34,7 @@ export default function Index() {
         <ShareModal ref={shareModal} animate={shareOpen} />
       </div>
       <Header />
-      <div>This is where the content will go</div>
+      <div>Index.js Component</div>
     </>
   );
 }
