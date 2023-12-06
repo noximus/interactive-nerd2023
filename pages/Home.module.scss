@@ -1,0 +1,14 @@
+.modalMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; // Add this line to allow clicks on other elements
+}
+.modal {
+  position: relative;
+  top: 80px;
+  right: 0;
+}

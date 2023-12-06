@@ -28,9 +28,9 @@ const ShareModal = forwardRef((props, ref) => {
   useLayoutEffect(() => {
     const allIcons = getAllIcons();
     if (props.animate) {
-      gsap.to(allIcons, { duration: 0.5, stagger: 0.1, ease: 'inOut', opacity: 1 });
+      gsap.to(allIcons, { duration: 0.5, stagger: 0.1, ease: 'inOut', opacity: 1, delay: 0.5 });
     } else if (!props.animate) {
-      gsap.to(allIcons, { duration: 0.6, stagger: 0.1, ease: 'inOut', opacity: 0 });
+      gsap.to(allIcons, { duration: 0.5, stagger: 0.05, ease: 'inOut', opacity: 0 });
     }
   }, [props.animate]);
 
