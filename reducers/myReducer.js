@@ -3,13 +3,18 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const mySlice = createSlice({
   name: 'myFeature',
-  initialState: { value: 20 },
+  initialState: {
+    name: 'henry',
+    lastName: 'test',
+    age: 6,
+    isFetching: false,
+  },
   reducers: {
     increment: (state) => {
-      state.value += 1;
+      state.age += 1;
     },
     decrement: (state) => {
-      state.value -= 1;
+      state.age -= 1;
     },
   },
 });
