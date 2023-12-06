@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { increment, decrement } from '../../../reducers/myReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleMenuOpen } from '../../../reducers/myReducer';
 import { gsap } from 'gsap';
 import styles from './MenuBtn.module.scss';
 
 const MenuBtn = () => {
-  // const dispatch = useDispatch();
-  // const { age } = useSelector((state) => state.myReducer);
-  const [menuActive, setMenuActive] = useState(false);
+  const dispatch = useDispatch();
+  const { menuOpen } = useSelector((state) => state.myReducer);
   const [isHovered, setIsHovered] = useState(false);
   const menuBtn = useRef();
   const ncs = useRef();
@@ -15,20 +14,28 @@ const MenuBtn = () => {
   const nbs = useRef();
 
   const handleMouseEnter = () => {
-    // dispatch(increment());
     setIsHovered(true);
   };
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
   const handleClick = () => {
-    setMenuActive(!menuActive);
+    dispatch(toggleMenuOpen());
+    console.log('handleClick , menuOpen: ', menuOpen);
   };
 
   useEffect(() => {
     const durationVal = 0.5;
     if (isHovered) {
       gsap.to(menuBtn.current, { duration: durationVal, color: '#F57500' });
+    } else {
+      gsap.to(menuBtn.current, { duration: durationVal, color: '#FFF' });
+    }
+  }, [isHovered]);
+
+  useEffect(() => {
+    const durationVal = 0.5;
+    if (menuOpen) {
       gsap.to(ncs.current, {
         duration: durationVal,
         rotation: -45,
@@ -51,7 +58,6 @@ const MenuBtn = () => {
         left: '6px',
       });
     } else {
-      gsap.to(menuBtn.current, { duration: durationVal, color: '#FFF' });
       gsap.to(ncs.current, {
         duration: durationVal,
         rotation: 0,
@@ -74,11 +80,11 @@ const MenuBtn = () => {
         left: '0',
       });
     }
-  }, [isHovered]);
+  }, [menuOpen]);
 
   return (
     <div onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.menu}>
-      <div className={`${styles.nav_btn} ${menuActive ? styles.active : ''}`}>
+      <div className={`${styles.nav_btn} ${menuOpen ? styles.active : ''}`}>
         <span ref={ncs} className={styles.ncs}></span>
         <span ref={nos} className={styles.nos}></span>
         <span ref={nbs} className={styles.nbs}></span>
