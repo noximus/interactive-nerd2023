@@ -1,8 +1,10 @@
+import { useLayoutEffect, useRef, forwardRef } from "react";
+import { gsap } from "gsap";
 import styles from "./MenuModal.module.scss";
 
-const MenuModal = () => {
+const MenuModal = forwardRef((props, ref) => {
   return (
-    <div className={styles.container}>
+    <div ref={ref} className={styles.container}>
       <ul>
         <li>
           <a className={styles.menuLinks} href="#">
@@ -27,6 +29,6 @@ const MenuModal = () => {
       </ul>
     </div>
   );
-};
+});
 
 export default MenuModal;

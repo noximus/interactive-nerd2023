@@ -11,6 +11,7 @@ export default function Index() {
   const shareModal = useRef();
   const menuModal = useRef();
   const tween = useRef(null);
+  const tween2 = useRef(null);
   const shareModalCurrent = shareModal.current;
   const menuModalCurrent = menuModal.current;
   const { shareOpen, menuOpen } = useSelector((state) => state.myReducer);
@@ -33,13 +34,13 @@ export default function Index() {
 
   useLayoutEffect(() => {
     if (menuOpen) {
-      tween.current = gsap.to(menuModalCurrent, {
+      tween2.current = gsap.to(menuModalCurrent, {
         right: "0",
         ease: "inOut",
         duration: 0.5,
       });
     } else {
-      tween.current = gsap.to(menuModalCurrent, {
+      tween2.current = gsap.to(menuModalCurrent, {
         right: "-240px",
         ease: "inOut",
         duration: 0.5,
