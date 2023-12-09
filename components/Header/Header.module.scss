@@ -7,3 +7,36 @@
   grid-template-rows: 80px;
   grid-template-areas: 'brand menu share';
 }
+// X-Small devices (landscape phones, 564px and up)
+@media (min-width: 564px) { 
+  //something here
+ }
+// Small devices (landscape phones, 600px and up)
+@media (min-width: 600px) { 
+  //something here
+ }
+
+// Medium devices (tablets, 764px and up)
+@media (min-width: 764px) { 
+  .header {
+    grid-template-columns: 1fr 150px 150px;
+  }
+ }
+
+// Large devices (desktops, 1064px and up)
+@media (min-width: 1064px) { 
+  .header {
+    grid-template-columns: 4fr 150px 2fr;
+    grid-template-areas: 'brand menu subTitle';
+  }
+ }
+
+// X-Large devices (large desktops, 1260px and up)
+@media (min-width: 1260px) { 
+  //something here
+ }
+
+// XX-Large devices (larger desktops, 1500px and up)
+@media (min-width: 1500px) { 
+  //something here
+ }
