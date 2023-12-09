@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect, useContext } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleShareOpen } from '../../../reducers/myReducer';
 import { gsap } from 'gsap';
@@ -11,9 +11,7 @@ const ShareBtn = () => {
   const shareBtnOverlay = useRef();
   const shareBtnCurrent = shareBtn.current;
   const shareBtnOverlayCurrent = shareBtnOverlay.current;
-  const [shareClicked, setShareClicked] = useState(false);
   const [shareBtnHover, setShareBtnHover] = useState(false);
-  const [modalShowing, setModalShowing] = useState(false);
 
   const handleClick = () => {
     dispatch(toggleShareOpen());

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, forwardRef, useState } from 'react';
+import { useLayoutEffect, useRef, forwardRef } from 'react';
 import { gsap } from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubAlt, faFacebook, faInstagram, faLinkedinIn, faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -6,7 +6,6 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import styles from './ShareModal.module.scss';
 
 const ShareModal = forwardRef((props, ref) => {
-  const [mouseHover, setMouseHover] = useState(false);
   const socialIcon1 = useRef();
   const socialIcon2 = useRef();
   const socialIcon3 = useRef();

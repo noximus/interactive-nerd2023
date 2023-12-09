@@ -12,3 +12,39 @@
   top: 80px;
   right: 0;
 }
+
+
+// ***** Below is the template for media queries *****
+//  **** Just copy and paste this into your scss file ****
+
+// XX-Small devices (portrait phones, less than 564px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// X-Small devices (landscape phones, 564px and up)
+@media (min-width: 564px) { 
+  //something here
+ }
+// Small devices (landscape phones, 600px and up)
+@media (min-width: 600px) { 
+  //something here
+ }
+
+// Medium devices (tablets, 764px and up)
+@media (min-width: 764px) { 
+  //something here
+ }
+
+// Large devices (desktops, 1064px and up)
+@media (min-width: 1064px) { 
+  //something here
+ }
+
+// X-Large devices (large desktops, 1260px and up)
+@media (min-width: 1260px) { 
+  //something here
+ }
+
+// XX-Large devices (larger desktops, 1500px and up)
+@media (min-width: 1500px) { 
+  //something here
+ }
