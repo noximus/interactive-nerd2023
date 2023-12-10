@@ -1,22 +1,20 @@
-.header {
-  font-family: 'Mukta Vaani', sans-serif;
-  color: white;
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 80px 80px;
-  grid-template-rows: 80px;
-  grid-template-areas: 'brand menu share';
+.aside {
+  // display: none;
 }
+// ***** Below is the template for media queries *****
+//  **** Just copy and paste this into your scss file ****
+
+// XX-Small devices (portrait phones, less than 564px)
+// No media query for `xs` since this is the default in Bootstrap
+
 // X-Small devices (landscape phones, 564px and up)
 @media (min-width: 564px) { 
   //something here
  }
 // Small devices (landscape phones, 600px and up)
 @media (min-width: 600px) { 
-  .header {
-    grid-template-columns: 1fr 120px 150px;
-  }
-}
+  //something here
+ }
 
 // Medium devices (tablets, 764px and up)
 @media (min-width: 764px) { 
@@ -25,9 +23,14 @@
 
 // Large devices (desktops, 1064px and up)
 @media (min-width: 1064px) { 
-  .header {
-    grid-template-columns: 4fr 120px 2fr;
-    grid-template-areas: 'brand menu subTitle';
+  .aside {
+    grid-area: aside;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-left: 15px;
   }
  }
 

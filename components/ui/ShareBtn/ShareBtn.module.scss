@@ -34,16 +34,15 @@
   //something here
  }
 // Small devices (landscape phones, 600px and up)
-@media (min-width: 600px) { 
-  //something here
+@media (min-width: 600px) {
+  .shareBtnOverlay{
+    width: 150px;
+  }
  }
 
 // Medium devices (tablets, 764px and up)
 @media (min-width: 764px) { 
   //something here
-  .shareBtnOverlay{
-    width: 150px;
-  }
  }
 
 // Large devices (desktops, 1064px and up)

@@ -1,0 +1,17 @@
+.content {
+  grid-area: content;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-left: 15px;
+}
+.site_name {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  margin-left: 10px;
+  color: white;
+  text-transform: uppercase;
+}
