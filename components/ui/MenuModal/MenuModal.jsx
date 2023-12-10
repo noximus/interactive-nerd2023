@@ -1,10 +1,10 @@
-import { useLayoutEffect, useRef, forwardRef } from "react";
-import { gsap } from "gsap";
-import styles from "./MenuModal.module.scss";
+import { useLayoutEffect, useRef, forwardRef } from "react"
+import { gsap } from "gsap"
+import styles from "./MenuModal.module.scss"
 
 const MenuModal = forwardRef((props, ref) => {
-  const menuLinkList = useRef();
-  const menuModalFooter = useRef();
+  const menuLinkList = useRef()
+  const menuModalFooter = useRef()
 
   useLayoutEffect(() => {
     if (props.animate) {
@@ -14,27 +14,27 @@ const MenuModal = forwardRef((props, ref) => {
         left: "20%",
         opacity: 1,
         delay: 1,
-      });
+      })
       gsap.to(menuModalFooter.current, {
         duration: 0.5,
         ease: "inOut",
         bottom: 0,
         delay: 0.5,
-      });
+      })
     } else if (!props.animate) {
       gsap.to(menuLinkList.current, {
         duration: 0.5,
         ease: "inOut",
         left: "50%",
         opacity: 0,
-      });
+      })
       gsap.to(menuModalFooter.current, {
         duration: 0.5,
         ease: "inOut",
         bottom: -70,
-      });
+      })
     }
-  }, [props.animate]);
+  }, [props.animate])
 
   return (
     <div ref={ref} className={styles.container}>
@@ -64,7 +64,7 @@ const MenuModal = forwardRef((props, ref) => {
         Interactive Nerd All Rights Reserved
       </div>
     </div>
-  );
-});
+  )
+})
 
-export default MenuModal;
+export default MenuModal
