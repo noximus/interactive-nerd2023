@@ -1,7 +1,7 @@
 .container {
   position: absolute;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   flex-direction: column;
   font-size: 9px;
@@ -13,6 +13,12 @@
   height: 350px;
   top:80px;
   // right: -350px;
+  overflow: hidden;
+}
+.menuLinkList{
+  opacity: 0;
+  position: relative;
+  left: 50%;
 }
 .menuLinks {
   cursor: pointer;
@@ -24,4 +30,15 @@
 .menuLinks:hover{
   color:orange;
   background:rgba(255, 255, 255, 0.05);
+}
+.menuModalFooter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  bottom: -70px;
+  position: absolute;
+  background:#3b3b3b;
+  height: 70px;
+  width: 100%;
 }
