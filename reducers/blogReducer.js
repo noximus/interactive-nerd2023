@@ -36,3 +36,6 @@ const blogSlice = createSlice({
   },
 });
 export const { reducer: blogReducer } = blogSlice;
+export const findPostById = (state, postId) => {
+  return state.blogReducer.posts.find((post) => post.id == postId);
+};

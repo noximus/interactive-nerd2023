@@ -1,14 +1,14 @@
 import React, { useRef, useLayoutEffect, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { gsap } from "gsap";
-import Header from "../components/Header/Header";
-import MenuModal from "../components/ui/MenuModal/MenuModal";
-import ShareModal from "../components/ui/ShareModal/ShareModal";
-import SideBar from "../components/ui/SideBar/SideBar";
+import Header from "../../components/Header/Header";
+import MenuModal from "../../components/ui/MenuModal/MenuModal";
+import ShareModal from "../../components/ui/ShareModal/ShareModal";
+import SideBar from "../../components/ui/SideBar/SideBar";
 
-import styles from "./Home.module.scss";
+import styles from "../Home.module.scss";
 
-import { fetchBlogPosts } from "../reducers/blogReducer";
+import { fetchBlogPosts } from "../../reducers/blogReducer";
 
 export default function Blog() {
   const shareModal = useRef();
@@ -56,7 +56,12 @@ export default function Blog() {
           <div>
             {posts.map((post) => (
               <div key={post.id}>
-                <h2>{post.title}</h2>
+                <img
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/storage/${post.thumbnail}`}
+                />
+                <a href={`/blog/${post.id}`}>
+                  <h2>{post.title}</h2>
+                </a>
                 {/* Render other post details as needed */}
               </div>
             ))}
